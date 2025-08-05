@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customers"
+    android:background="@drawable/bg2">
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="customers"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textColor="#88D4FB"
+        android:fontFamily="sans-serif-black"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/tomc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create customers"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#88D4FB"
+        android:textColor="@color/white"
+        android:layout_below="@id/judul">
+    </Button>
+
+    <SearchView
+        android:id="@+id/cari"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tomc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="34dp"
+        android:background="#03A9F4"
+        android:backgroundTint="#88D4FB"
+        android:visibility="visible"
+        />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cari"
+        android:layout_marginTop="19dp"
+        android:divider="#88D4FB"
+        android:dividerHeight="1dp"
+        >
+
+
+
+
+    </ListView>
+
+
+</RelativeLayout>
