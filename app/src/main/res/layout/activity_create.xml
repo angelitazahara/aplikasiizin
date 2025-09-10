@@ -25,6 +25,119 @@
         android:textSize="50sp"
         android:textStyle="bold" />
 
+    <TableLayout
+        android:id="@+id/lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/judul"
+        android:layout_marginTop="30dp">
+
+        <TableRow
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/first"
+                android:hint="name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                >
+            </EditText>
+
+
+
+        </TableRow>
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/lyt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lyt">
+        <TableRow
+            android:gravity="center">
+
+        <EditText
+            android:id="@+id/day"
+            android:hint="day"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textSize="30sp"
+            >
+        </EditText>
+
+        <EditText
+            android:id="@+id/month"
+            android:hint="month"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="30sp">
+        </EditText>
+
+            <EditText
+                android:id="@+id/years"
+            android:hint="years"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="30sp">
+        </EditText>
+    </TableRow>
+    </TableLayout>
+
+
+
+    <EditText
+        android:id="@+id/alamat"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:hint="address"
+    android:textSize="25sp"
+    android:layout_below="@id/lyt2"
+    android:gravity="center"
+    android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/imil"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:hint="email"
+    android:textSize="25sp"
+    android:layout_below="@id/alamat"
+    android:gravity="center"
+    android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp">
+
+</EditText>
+
+    <EditText
+        android:id="@+id/pwd"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:hint="password"
+    android:textSize="25sp"
+    android:layout_below="@id/imil"
+    android:gravity="center"
+    android:layout_centerHorizontal="true">
+
+</EditText>
+
+ <Button
+     android:id="@+id/butam"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="create account"
+     android:textSize="20sp"
+     android:backgroundTint="#48A9D7"
+     android:layout_below="@id/pwd"
+     android:layout_centerHorizontal="true"
+     android:layout_marginTop="15dp"
+     >
+
+ </Button>
 
 
 </RelativeLayout>

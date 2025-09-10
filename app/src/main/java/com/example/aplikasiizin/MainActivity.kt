@@ -19,45 +19,47 @@ class MainActivity : AppCompatActivity() {
     private lateinit var toms : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-dbHelper = UserDataHelper(this)
-        val username = findViewById< EditText>(R.id.usn)
-        val password = findViewById<EditText>(R.id.psw)
-        val toms = findViewById<Button>(R.id.toms)
-
-        toms.setOnClickListener {
-            val username = username.text.toString()
-            val password = password.text.toString()
-            if (username.isEmpty() || password.isEmpty()){
-                Toast.makeText(this,"username dan password wajib diisi",Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            val isvalid = dbHelper.checkUser(username,password)
-            if (isvalid){
-                Toast.makeText(this,"login berhasil", Toast.LENGTH_SHORT).show()
-                val  intent = Intent(this,awal::class.java)
-
-                intent.putExtra("username",username)//
-                startActivity(intent)
-                finish()
-            }
-            else{
-                Toast.makeText(this,"email atau passord salah", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-
-
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        dbHelper = UserDataHelper(this)
+
+        username = findViewById(R.id.usn)
+        password = findViewById(R.id.psw)
+        toms = findViewById(R.id.toms)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
 
+        toms.setOnClickListener {
+            val usernameStr = username.text.toString()
+            val passwordStr = password.text.toString()
+
+            if (usernameStr.isEmpty() || passwordStr.isEmpty()) {
+                Toast.makeText(this, "username dan password wajib diisi", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val isvalid = dbHelper.checkUser(usernameStr, passwordStr)
+            if (isvalid) {
+                Toast.makeText(this, "login berhasil", Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, customers::class.java)
+                startActivity(intent)
+
+                // Optional: supaya tidak bisa kembali ke login
+                // finish()
+            } else {
+                Toast.makeText(this, "email atau password salah", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 }
+
 
 

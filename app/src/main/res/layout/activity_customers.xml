@@ -45,22 +45,22 @@
         android:layout_marginTop="34dp"
         android:background="#03A9F4"
         android:backgroundTint="#88D4FB"
-        android:visibility="visible"
-        />
+        android:visibility="visible" />
 
-    <ListView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/cari"
-        android:layout_marginTop="19dp"
-        android:divider="#88D4FB"
-        android:dividerHeight="1dp"
-        >
+        android:layout_marginTop="16dp">
 
-
-
-
-    </ListView>
+        <LinearLayout
+            android:id="@+id/customerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"/>
+    </ScrollView>
 
 
 </RelativeLayout>
